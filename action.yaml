@@ -1,5 +1,8 @@
 name: "Update Action README"
 description: "Renders Markdown tables for inputs and outputs from action.yaml file."
+branding:
+  icon: align-justify
+  color: gray-dark
 inputs:
   file:
     description: "Path of the updated Markdown file."
