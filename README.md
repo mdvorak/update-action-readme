@@ -6,13 +6,13 @@ Renders Markdown tables for inputs and outputs from `actions.yaml` file.
 
 Add following lines to Markdown file:
 
-```md
-<!--(inputs&#45;start)-->
-<!--(inputs&#45;end)-->
+<pre>
+&lt;!--(inputs&#45;start)-->
+&lt;!--(inputs&#45;end)-->
 
-<!--(outputs&#45;start)-->
-<!--(outputs&#45;end)-->
-```
+&lt;!--(outputs&#45;start)-->
+&lt;!--(outputs&#45;end)-->
+</pre>
 
 This action will always replace contents between start/end tags. Only one pair might be used.
 
