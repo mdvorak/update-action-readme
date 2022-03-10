@@ -44,7 +44,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Update README.md
-        uses: csas-actions/update-action-readme@v1
+        uses: mdvorak/update-action-readme@v1
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
