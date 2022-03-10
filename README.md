@@ -60,6 +60,12 @@ jobs:
 ### Inputs
 
 <!--(inputs-start)-->
+
+| Name  | Required | Default | Description |
+| :---: | :------: | :-----: | ----------- |
+| `file` | true | README.md | Path of the updated Markdown file. |
+| `action-file` | true | action.yaml | Path of action.yaml file. |
+
 <!--(inputs-end)-->
 
 ### Requirements
