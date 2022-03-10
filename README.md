@@ -41,7 +41,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Update README.md
         uses: csas-actions/update-action-readme@v1
