@@ -1,0 +1,34 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - action.yaml
+      - .github/workflows/update-readme.yaml
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Update README.md
+        uses: ./
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "Update README.md tables"
+          commit-message: "docs(readme): updated README.md inputs table"
+          body: "Updated README.md inputs/outputs tables, according to action.yaml file"
+          branch: bot/update-readme
+          delete-branch: true
+          labels: bot,docs

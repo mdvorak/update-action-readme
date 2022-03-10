@@ -1,0 +1,35 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ "**" ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Copy test file
+        run: cp test/TEST.md /tmp/TEST.md
+
+      - name: Update README.md
+        uses: ./
+        with:
+          file: /tmp/TEST.md
+          action-file: test/action.yaml
+
+      - name: Assert
+        run: |
+          cmp -s /tmp/TEST.md test/EXPECTED.md
+
+      - name: Print rendered
+        if: ${{ failure() }}
+        run: |
+          cat /tmp/TEST.md

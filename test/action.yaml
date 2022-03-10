@@ -1,0 +1,19 @@
+name: "TEST"
+description: "Test."
+
+inputs:
+  foo:
+    description: "Foo"
+    required: true
+    default: abcd
+  bar:
+    description: "Bar."
+    required: false
+outputs:
+  goo:
+    description: "Goo."
+    value: ""
+
+runs:
+  using: composite
+  steps: [ ]

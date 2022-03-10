@@ -1,0 +1,21 @@
+name: "Update Action README"
+description: "Renders Markdown tables for inputs and outputs from action.yaml file."
+inputs:
+  file:
+    description: "Path of the updated Markdown file."
+    required: true
+    default: README.md
+  action-file:
+    description: "Path of action.yaml file."
+    required: true
+    default: action.yaml
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        "$GITHUB_ACTION_PATH/update_readme.sh" "$FILE" "$ACTION_FILE"
+      env:
+        FILE: ${{ inputs.file }}
+        ACTION_FILE: ${{ inputs.action-file }}
