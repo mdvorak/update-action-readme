@@ -49,7 +49,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          title: "Update README.md tables"
+          title: "Update README.md tables on ${{ github.ref_name }}"
           commit-message: "docs(readme): updated README.md inputs table"
           body: "Updated README.md inputs/outputs tables, according to action.yaml file"
           branch: bot/update-readme
