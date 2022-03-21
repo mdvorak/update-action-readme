@@ -43,5 +43,6 @@ render_outputs() {
   rm -f /tmp/TABLE.md /tmp/FILE.md
 }
 
+>&2 echo "Updating $FILE according to $ACTION_FILE"
 render_inputs
 render_outputs
