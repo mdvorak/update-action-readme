@@ -9,9 +9,8 @@ inputs:
     required: true
     default: README.md
   action-file:
-    description: "Path of action.yaml file."
-    required: true
-    default: action.yaml
+    description: "Path of action.yml file."
+    required: false
 
 runs:
   using: composite
