@@ -64,7 +64,7 @@ jobs:
 | Name  | Required | Default | Description |
 | :---: | :------: | :-----: | ----------- |
 | `file` | true | README.md | Path of the updated Markdown file. |
-| `action-file` | true | action.yaml | Path of action.yaml file. |
+| `action-file` | false |  | Path of action.yml file. |
 
 <!--(inputs-end)-->
 
