@@ -1,6 +1,8 @@
+[![Test](https://github.com/mdvorak/update-action-readme/actions/workflows/test.yml/badge.svg)](https://github.com/mdvorak/update-action-readme/actions/workflows/test.yml)
+
 # Update README Inputs/Outputs Action
 
-Renders Markdown tables for inputs and outputs from `actions.yaml` file.
+Renders Markdown tables for inputs and outputs from `actions.yml` file.
 
 ## Usage
 
@@ -19,7 +21,7 @@ This action will always replace contents between start/end tags. Only one pair m
 The script [update_readme.sh](./update_readme.sh) is also usable on its own:
 
 ```bash
-update_readme.sh [target file = README.md] [action definition = action.yaml]
+update_readme.sh [target file = README.md] [action definition = action.yml]
 ```
 
 ### Example Workflow
@@ -30,7 +32,7 @@ on:
   push:
     branches: [ "**" ]
     paths:
-      - action.yaml
+      - action.yml
   workflow_dispatch:
 
 jobs:
@@ -51,7 +53,7 @@ jobs:
         with:
           title: "Update README.md tables on ${{ github.ref_name }}"
           commit-message: "docs(readme): updated README.md inputs table"
-          body: "Updated README.md inputs/outputs tables, according to action.yaml file"
+          body: "Updated README.md inputs/outputs tables, according to action.yml file"
           branch: update-readme--${{ github.ref_name }}
           delete-branch: true
           labels: bot,docs
