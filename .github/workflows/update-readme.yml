@@ -5,8 +5,8 @@ on:
     branches:
       - "**"
     paths:
-      - action.yaml
-      - .github/workflows/update-readme.yaml
+      - action.tml
+      - .github/workflows/update-readme.yml
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
         with:
           title: "Update README.md tables on ${{ github.ref_name }}"
           commit-message: "docs(readme): updated README.md inputs table"
-          body: "Updated README.md inputs/outputs tables, according to action.yaml file"
+          body: "Updated README.md inputs/outputs tables, according to action.yml file"
           branch: update-readme--${{ github.ref_name }}
           delete-branch: true
           labels: bot,docs
