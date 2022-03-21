@@ -3,7 +3,16 @@
 set -e
 
 FILE=${1:-README.md}
-ACTION_FILE=${2:-action.yaml}
+ACTION_FILE=${2}
+
+# Smart action file name default
+if [ -z "$ACTION_FILE" ]; then
+  if [ -f action.yaml ]; then
+    ACTION_FILE="action.yaml"
+  else
+    ACTION_FILE="action.yml"
+  fi
+fi
 
 render_inputs() {
   {

@@ -23,7 +23,7 @@ jobs:
         uses: ./
         with:
           file: /tmp/TEST.md
-          action-file: test/action.yaml
+          action-file: test/action.yml
 
       - name: Assert
         run: |
