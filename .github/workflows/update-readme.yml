@@ -29,6 +29,6 @@ jobs:
           title: "Update README.md tables on ${{ github.ref_name }}"
           commit-message: "docs(readme): updated README.md inputs table"
           body: "Updated README.md inputs/outputs tables, according to action.yaml file"
-          branch: bot/update-readme
+          branch: update-readme--${{ github.ref_name }}
           delete-branch: true
           labels: bot,docs
