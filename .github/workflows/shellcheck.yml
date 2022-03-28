@@ -2,13 +2,9 @@ name: ShellCheck
 
 on:
   push:
-    branches:
-      - "**"
-    paths:
-      - "**.sh"
+    branches: [ main ]
   pull_request:
-    paths:
-      - "**.sh"
+    branches: [ "**" ]
   workflow_dispatch:
 
 jobs:
@@ -16,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3

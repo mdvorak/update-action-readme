@@ -19,6 +19,7 @@ render_inputs() {
     echo
     echo "| Name  | Required | Default | Description |"
     echo "| :---: | :------: | :-----: | ----------- |"
+    # shellcheck disable=SC2016
     yq e '.inputs | .[] | ["`" + key + "`", .required, .default // "", .description] | "| " + join(" | ") + " |"' "$ACTION_FILE"
     echo
   } >/tmp/TABLE.md
@@ -34,6 +35,7 @@ render_outputs() {
     echo
     echo "| Name  | Description |"
     echo "| :---: | ----------- |"
+    # shellcheck disable=SC2016
     yq e '.outputs | .[] | ["`" + key + "`", .description] | "| " + join(" | ") + " |"' "$ACTION_FILE"
     echo
   } >/tmp/TABLE.md
@@ -43,6 +45,6 @@ render_outputs() {
   rm -f /tmp/TABLE.md /tmp/FILE.md
 }
 
->&2 echo "Updating $FILE according to $ACTION_FILE"
+echo >&2 "Updating $FILE according to $ACTION_FILE"
 render_inputs
 render_outputs
