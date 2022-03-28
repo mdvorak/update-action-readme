@@ -6,7 +6,7 @@ FILE=${1:-README.md}
 ACTION_FILE=${2}
 
 # Smart action file name default
-if [ -z "$ACTION_FILE" ]; then
+if [ -z $ACTION_FILE ]; then
   if [ -f action.yaml ]; then
     ACTION_FILE="action.yaml"
   else
@@ -43,6 +43,6 @@ render_outputs() {
   rm -f /tmp/TABLE.md /tmp/FILE.md
 }
 
->&2 echo "Updating $FILE according to $ACTION_FILE"
+echo >&2 "Updating $FILE according to $ACTION_FILE"
 render_inputs
 render_outputs
