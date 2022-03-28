@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 FILE=${1:-README.md}
 ACTION_FILE=${2}
