@@ -56,7 +56,7 @@ jobs:
           body: "Updated README.md inputs/outputs tables, according to action.yml file"
           branch: update-readme--${{ github.ref_name }}
           delete-branch: true
-          labels: bot,docs
+          labels: bot,documentation
 ```
 
 ### Inputs
