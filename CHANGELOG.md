@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://github.com/mdvorak/update-action-readme/compare/v1.1.1...v1.1.2) (2022-03-28)
+
+
+### Bug Fixes
+
+* use semver-utils v1.6 to properly update tags ([133e930](https://github.com/mdvorak/update-action-readme/commit/133e930c342343f2863f4b3a8252388cd908fffd))
+
 ### [1.1.1](https://github.com/mdvorak/update-action-readme/compare/v1.1.0...v1.1.1) (2022-03-28)
 
 
