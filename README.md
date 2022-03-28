@@ -1,4 +1,5 @@
 [![Test](https://github.com/mdvorak/update-action-readme/actions/workflows/test.yml/badge.svg)](https://github.com/mdvorak/update-action-readme/actions/workflows/test.yml)
+[![ShellCheck](https://github.com/mdvorak/update-action-readme/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/mdvorak/update-action-readme/actions/workflows/shellcheck.yml)
 
 # Update README Inputs/Outputs Action
 
