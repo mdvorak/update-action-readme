@@ -6,7 +6,7 @@ FILE=${1:-README.md}
 ACTION_FILE=${2}
 
 # Smart action file name default
-if [ -z "$ACTION_FILE" ]; then
+if [ -z $ACTION_FILE ]; then
   if [ -f action.yaml ]; then
     ACTION_FILE="action.yaml"
   else
