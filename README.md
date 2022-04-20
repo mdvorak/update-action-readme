@@ -4,6 +4,7 @@
 # Update README Inputs/Outputs Action
 
 Renders Markdown tables for inputs and outputs from `actions.yml` file.
+TEST
 
 ## Usage
 
