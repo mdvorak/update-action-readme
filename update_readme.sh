@@ -20,7 +20,7 @@ render_inputs() {
     echo "| Name  | Required | Default | Description |"
     echo "| :---: | :------: | :-----: | ----------- |"
     # shellcheck disable=SC2016
-    yq e '.inputs | .[] | ["`" + key + "`", .required, .default // "", .description] | "| " + join(" | ") + " |"' "$ACTION_FILE"
+    yq e '.inputs | .[] | ["`" + key + "`", .required, .default // "", .description | sub("\s+$", "") | sub("\n", "<br>")] | "| " + join(" | ") + " |"' "$ACTION_FILE"
     echo
   } >/tmp/TABLE.md
 
@@ -36,7 +36,7 @@ render_outputs() {
     echo "| Name  | Description |"
     echo "| :---: | ----------- |"
     # shellcheck disable=SC2016
-    yq e '.outputs | .[] | ["`" + key + "`", .description] | "| " + join(" | ") + " |"' "$ACTION_FILE"
+    yq e '.outputs | .[] | ["`" + key + "`", .description | sub("\s+$", "") | sub("\n", "<br>")] | "| " + join(" | ") + " |"' "$ACTION_FILE"
     echo
   } >/tmp/TABLE.md
 

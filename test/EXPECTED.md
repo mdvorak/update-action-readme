@@ -4,7 +4,7 @@
 
 | Name  | Description |
 | :---: | ----------- |
-| `goo` | Goo. |
+| `goo` | Multi-line<br>Goo. |
 
 <!--(outputs-end)-->
 
@@ -15,7 +15,7 @@ Foo
 | Name  | Required | Default | Description |
 | :---: | :------: | :-----: | ----------- |
 | `foo` | true | abcd | Foo |
-| `bar` | false |  | Bar. |
+| `bar` | false |  | Multi-line<br>Bar. |
 
 <!--(inputs-end)-->
 

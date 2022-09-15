@@ -7,11 +7,15 @@ inputs:
     required: true
     default: abcd
   bar:
-    description: "Bar."
+    description: |
+      Multi-line
+      Bar.
     required: false
 outputs:
   goo:
-    description: "Goo."
+    description: |
+      Multi-line
+      Goo.
     value: ""
 
 runs:
