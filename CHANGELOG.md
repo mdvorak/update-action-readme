@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/mdvorak/update-action-readme/compare/v1.1.3...v1.2.0) (2022-09-15)
+
+
+### Features
+
+* support multi-line description ([61c0484](https://github.com/mdvorak/update-action-readme/commit/61c048446696b1a0da07993cd58fcef7cdc9f16d))
+
 ### [1.1.3](https://github.com/mdvorak/update-action-readme/compare/v1.1.2...v1.1.3) (2022-04-20)
 
 
