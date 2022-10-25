@@ -30,15 +30,18 @@ render_inputs() {
 }
 
 render_outputs() {
-
-  {
-    echo
-    echo "| Name  | Description |"
-    echo "| :---: | ----------- |"
-    # shellcheck disable=SC2016
-    yq e '.outputs | .[] | ["`" + key + "`", .description | sub("\s+$", "") | sub("\n", "<br>")] | "| " + join(" | ") + " |"' "$ACTION_FILE"
-    echo
-  } >/tmp/TABLE.md
+  if yq e '.outputs' "$ACTION_FILE"; then
+    {
+      echo
+      echo "| Name  | Description |"
+      echo "| :---: | ----------- |"
+      # shellcheck disable=SC2016
+      yq e '.outputs | .[] | ["`" + key + "`", .description | sub("\s+$", "") | sub("\n", "<br>")] | "| " + join(" | ") + " |"' "$ACTION_FILE"
+      echo
+    } >/tmp/TABLE.md
+  else
+    "None" >/tmp/TABLE.md
+  fi
 
   sed "/<!--(outputs-start)-->/,/<!--(outputs-end)-->/{//!d;}" "$FILE" >/tmp/FILE.md
   awk '$0=="<!--(outputs-start)-->" {print;system("cat /tmp/TABLE.md");next}1' /tmp/FILE.md >"$FILE"
