@@ -30,7 +30,8 @@ render_inputs() {
 }
 
 render_outputs() {
-  if yq e '.outputs' "$ACTION_FILE"; then
+  OUTPUTS=$(yq e '.outputs' action.yml)
+  if [[ ! -z "$OUTPUTS" ]]; then
     {
       echo
       echo "| Name  | Description |"
