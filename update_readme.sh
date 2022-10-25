@@ -40,7 +40,7 @@ render_outputs() {
       echo
     } >/tmp/TABLE.md
   else
-    "None" >/tmp/TABLE.md
+    echo "None" >/tmp/TABLE.md
   fi
 
   sed "/<!--(outputs-start)-->/,/<!--(outputs-end)-->/{//!d;}" "$FILE" >/tmp/FILE.md
